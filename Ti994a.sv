@@ -87,14 +87,14 @@ module emu
 	output        FB_PAL_WR,
 `endif
 `endif
-
-	output        LED_USER,  // 1 - ON, 0 - OFF.
+	output  [4:0] LED,
+//	output        LED_USER,  // 1 - ON, 0 - OFF.
 
 	// b[1]: 0 - LED status is system status OR'd with b[0]
 	//       1 - LED status is controled solely by b[0]
 	// hint: supply 2'b00 to let the system control the LED.
-	output  [1:0] LED_POWER,
-	output  [1:0] LED_DISK,
+//	output  [1:0] LED_POWER,
+//	output  [1:0] LED_DISK,
 
 	// I/O board button press simulation (active high)
 	// b[1]: user button
@@ -202,9 +202,9 @@ assign sd_blk_cnt[3] = 6'd0;
 assign VGA_DISABLE = 1'b0;
 
 
-assign LED_USER  = ioctl_download | drive_led | loading_nv;
-assign LED_DISK  = 0;
-assign LED_POWER = 0;
+assign LED[1]    = ioctl_download | drive_led | loading_nv;
+//assign LED_DISK  = 0;
+//assign LED_POWER = 0;
 assign BUTTONS   = osd_btn;
 assign ps2_kbd_led_status[0] = btn_al;			// Synch Alpha Lock with Caps Lock LED
 assign ps2_kbd_led_status[1] = 0;
