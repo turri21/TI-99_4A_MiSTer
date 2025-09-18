@@ -1,3 +1,7 @@
+-=(TI-99_4A_Senhor notes)=-
+
+Tested: Working Video 720p, 1080p & Sound.
+___
 # [TI-99/4A](https://en.wikipedia.org/wiki/Texas_Instruments_TI-99/4A) Core for MiSTer Platform
 See below for original readme
 
